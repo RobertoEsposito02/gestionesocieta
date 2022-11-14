@@ -71,5 +71,22 @@ public class BatteriaDiTestService {
 		System.out.println("----------testRimozioneSocieta PASSED------------");
 	}
 	
+	public void testInserimentoDipendente() throws ParseException {
+		System.out.println("----------testInserimentoDipendente START------------");
+		
+		Societa nuovaSocieta = new Societa("societa1", "Via sole", new Date());
+		societaService.inserisci(nuovaSocieta);
+		
+		int quantiRecordPresentiAttualmente = dipendenteService.listAllDipendenti().size();
+		
+		Dipendente nuovoDipendente = new Dipendente("Mario", "Olla",
+				new SimpleDateFormat("yyyy/MM/dd").parse("2022/11/25"), 2000, societaService.listAllSocieta().get(0));
+		dipendenteService.inserisci(nuovoDipendente);
+		
+		if(quantiRecordPresentiAttualmente +1 != dipendenteService.listAllDipendenti().size())
+			throw new RuntimeException("testInserimentoDipendente: FALLITO inserimento non riuscito");
+		
+		System.out.println("----------testInserimentoDipendente PASSED------------");
+	}
 	
 }
