@@ -89,4 +89,19 @@ public class BatteriaDiTestService {
 		System.out.println("----------testInserimentoDipendente PASSED------------");
 	}
 	
+	public void testAggiornamentoDipendente() {
+		System.out.println("----------tesAggiornamentoDipendente START------------");
+		
+		if(dipendenteService.listAllDipendenti().size() < 1)
+			throw new RuntimeException("tesAggiornamentoDipendente: FALLITO impossibile aggiornare un DB vuoto");
+		
+		Dipendente dipendenteDaAggiornare = dipendenteService.caricaSingoloDipendente(dipendenteService.listAllDipendenti().get(0).getId());
+		dipendenteDaAggiornare.setNome("Luigi");
+		
+		dipendenteService.aggiorna(dipendenteDaAggiornare);
+		
+		System.out.println("----------tesAggiornamentoDipendente PASSED------------");
+	}
+	
+	
 }
