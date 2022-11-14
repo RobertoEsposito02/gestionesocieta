@@ -1,5 +1,6 @@
 package it.prova.gestionesocieta.service;
 
+import java.util.Date;
 import java.util.List;
 
 import it.prova.gestionesocieta.model.Dipendente;
@@ -14,4 +15,6 @@ public interface DipendenteService {
 	public void inserisci(Dipendente dipendente);
 	
 	public void rimuovi(Dipendente dipendente);
+	
+	public Dipendente cercaIlPiuAnzianoInTerminiLavorativiInSocietaFondatePrimaDel1990(Date dataFondazione);
 }

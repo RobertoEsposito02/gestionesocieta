@@ -16,4 +16,6 @@ public interface SocietaService {
 	public void rimuovi(Societa societa);
 	
 	public List<Societa> findByExample(Societa societa);
+	
+	public List<Societa> cercaLeSocietaConAlmenoUnDipendenteConRalSopraA(Integer input);
 }

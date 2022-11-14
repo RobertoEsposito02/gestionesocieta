@@ -67,4 +67,7 @@ public class SocietaServiceImpl implements SocietaService {
 		return entityManager.createQuery(query, Societa.class).getResultList();
 	}
 
+	public List<Societa> cercaLeSocietaConAlmenoUnDipendenteConRalSopraA(Integer input){
+		return societaRepository.findAllDistinctByDipendenti_ReditoAnnuoLordoGreaterThan(input);
+	}
 }

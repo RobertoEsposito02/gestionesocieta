@@ -1,5 +1,6 @@
 package it.prova.gestionesocieta.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,12 @@ public class DipendenteServiceImpl implements DipendenteService{
 	public void rimuovi(Dipendente dipendente) {
 		dipendenteRepository.delete(dipendente);
 	}
+
+	@Override
+	public Dipendente cercaIlPiuAnzianoInTerminiLavorativiInSocietaFondatePrimaDel1990(Date dataFondazione) {
+		return dipendenteRepository.findFirst1BySocieta_DataFondazioneBeforeOrderByDataAssunzioneAsc(dataFondazione);
+	}
+	
+	
 
 }
