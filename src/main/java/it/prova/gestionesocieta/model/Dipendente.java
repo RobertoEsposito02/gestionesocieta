@@ -35,11 +35,12 @@ public class Dipendente {
 	public Dipendente() {
 	}
 	
-	public Dipendente(String nome,String cognome,Date dataAssunzinoe,Integer reditoAnnuoLordo) {
+	public Dipendente(String nome,String cognome,Date dataAssunzinoe,Integer reditoAnnuoLordo,Societa societa) {
 		this.nome = nome;
 		this.cognome = cognome;
 		this.dataAssunzione = dataAssunzinoe;
 		this.reditoAnnuoLordo = reditoAnnuoLordo;
+		this.societa = societa;
 	}
 
 	public Long getId() {
